@@ -1,13 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.U2D;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
-using UnityEngineInternal.XR.WSA;
 public class Ball : MonoBehaviour
 {
     [Header ("Velocidad de la pelota")]

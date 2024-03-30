@@ -30,11 +30,6 @@ public class Menu : MonoBehaviour
 
     [Header(" Tiempo en escena o in game ")]
     [SerializeField] private float tiempo;
-    void Start()
-    {
-        
-    }
-
     
     void Update()
     {
@@ -44,35 +39,37 @@ public class Menu : MonoBehaviour
 
     void eleccionOpciones()
     {
-        if (Input.GetKeyDown(KeyCode.DownArrow) && estaSeleccionandoElModoSingle == false)
+
+
+        if (Input.GetKeyDown(KeyCode.DownArrow) && !estaSeleccionandoElModoSingle)
         {
             estaSeleccionandoElModoSingle = true;
             singleGame.color = Color.grey;
             localGame.color = Color.white;
             optionsGame.color = Color.white;
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow) && estaSeleccionandoElModoLocal == false)
+        else if (Input.GetKeyDown(KeyCode.DownArrow) && !estaSeleccionandoElModoLocal)
         {
             estaSeleccionandoElModoLocal = true;
             singleGame.color = Color.white;
             localGame.color = Color.grey;
             optionsGame.color = Color.white;
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow) && estaSeleccionandoElModoOptions == false)
+        else if (Input.GetKeyDown(KeyCode.DownArrow) && !estaSeleccionandoElModoOptions)
         {
             estaSeleccionandoElModoOptions = true;
             singleGame.color = Color.white;
             localGame.color = Color.white;
             optionsGame.color = Color.grey;
         }
-        else if (Input.GetKeyDown(KeyCode.UpArrow) && estaSeleccionandoElModoOptions == true)
+        else if (Input.GetKeyDown(KeyCode.UpArrow) && estaSeleccionandoElModoOptions)
         {
             estaSeleccionandoElModoOptions = false;
             singleGame.color = Color.white;
             localGame.color = Color.grey;
             optionsGame.color = Color.white;
         }
-        else if (Input.GetKeyDown(KeyCode.UpArrow) && estaSeleccionandoElModoLocal == true)
+        else if (Input.GetKeyDown(KeyCode.UpArrow) && estaSeleccionandoElModoLocal)
         {
             estaSeleccionandoElModoLocal = false;
             singleGame.color = Color.grey;
@@ -91,11 +88,8 @@ public class Menu : MonoBehaviour
         {
             SceneManager.LoadScene(1);
             partidaIniciada = true;
-
-            if (partidaIniciada)
-            {
-                tiempo++;
-            }
+            tiempo++;
+            
         }
         else if (localGame.color == Color.gray && Input.GetKeyDown(KeyCode.Space))
         {
