@@ -83,14 +83,12 @@ public class Ball : MonoBehaviour
         {
             pointIncrementPlayerOne++;
             pointPlayerOneText.text = pointIncrementPlayerOne.ToString();
-            transform.position = respawn.transform.position;
             Reset();
         }
         else if (collision.gameObject.CompareTag("Collision1"))
         {
             pointIncrementPlayerTwo++;
             pointPlayerTwoText.text = pointIncrementPlayerTwo.ToString();
-            transform.position = respawn.transform.position;
             Reset();
         }
         else if (collision.gameObject.CompareTag("CollisionLateral1") || collision.gameObject.CompareTag("CollisionLateral2"))
